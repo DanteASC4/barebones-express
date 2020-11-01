@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blah</title>
+  <link rel="stylesheet" href="/lib/css/styles.css">
+</head>
+<body>
+  <main>
+    <section class="user-info-cont">
+      <h1>
+        <% if ( user ) { %>
+          Username: <%= user.name %>
+          <br>
+          Age: <%= user.age %>
+        <% } %>
+      </h1>
+    </section>
+    <section class="login-form-cont">
+      <!-- We'll just recycle this page to show passing stuff back -->
+
+      <form action="/login" method="post">
+
+        <!-- Login input -->
+        <div class="input-cont">
+          <input type="text" name="username" id="loginUsername">
+          <label for="loginUsername">Enter your Username</label>
+        </div>
+
+        <!-- Password input -->
+        <div class="input-cont">
+          <input type="password" name="password" id="loginPassword">
+          <label for="loginPassword">Enter your Password</label>
+        </div>
+
+        <!-- Submit button container, might not need the div but I like grouping things in them -->
+        <div class="submit-cont">
+          <button type="submit">Login</button>
+        </div>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <!-- I put my scripts at the bottom of the body tag and defer them -->
+    <script src="/lib/scripts/main.js" defer></script>
+  </footer>
+</body>
+</html>
